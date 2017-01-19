@@ -4,7 +4,6 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -27,7 +26,7 @@ namespace Carcassonne
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            Content.RootDirectory = "CarcassonneContent";
 
         }
 
@@ -60,9 +59,9 @@ namespace Carcassonne
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            pericles10 = Content.Load<SpriteFont>(@"Fonts\Pericles10");
-            button = Content.Load<Texture2D>(@"Textures\Button");
+			pericles10 = Content.Load<SpriteFont>(@"Fonts\Arial");
+			//pericles10 = Content.Load<SpriteFont>(@"Fonts\Pericles10");
+			button = Content.Load<Texture2D>(@"Textures\Button");
 
             Camera.WorldRectangle = new Rectangle(0, 0, TileGrid.MapWidth * TileGrid.TileWidth, TileGrid.MapHeight * TileGrid.TileHeight);
             Camera.Position = Vector2.Zero;
